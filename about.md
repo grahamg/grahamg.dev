@@ -4,15 +4,18 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This website is a repository of thought and "brain dumps" that I've written and developed over the years.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+It's meant to help record writings, software developed outside of my professinal activities and is meant to be entirely seperate to that of my professional activities.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I mainly work with Python3, Java, Go, JavaScript and to a lesser extent Lisp and Clojure.
 
+All opinions here are my own, etc. you get the idea.
 
-[jekyll-organization]: https://github.com/jekyll
+Those interested can view a redacted view of my resume by poking around here. I'm not going to outrightly provide a URL to it to keep recruiter spam out.
+If your sufficiently technical, you shouldn't have a problem finding it.
+
+Lots of stuff gets sent to my email address linked on the front page. I'm not even sure why I included it, but it's an unfiltered form of contact.
+Twitter and various social media is for low value individals and don't generally particiape in that naval gazing waste of time.
+
+Technical research interests include digial privacy, Unix systems, functional programming, web development, Django, LLVMs.
