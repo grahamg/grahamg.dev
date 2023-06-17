@@ -12,7 +12,7 @@ The "Nagger" technique is a personalized timer that acts as a gentle reminder to
 Understanding the Shell Function:
 To implement the "Nagger" technique, we'll utilize a shell function called nagme(). This function accepts two parameters: the duration in minutes and the task description. Let's take a closer look at the code:
 
-```
+```bash
 nagme () {
     [ "$#" -ne 2 ] && printf "usage: $0 [in_minutes] [text]\n" && return 1
     printf "sleeping $1 min before telling you to $2\n"

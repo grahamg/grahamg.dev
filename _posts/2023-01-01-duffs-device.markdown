@@ -8,7 +8,7 @@ Duff's device is a loop unrolling technique, specific to C and C++, to improve t
 
 The following is an example of using Duff's device to unroll a loop that copies a block of memory.
 
-```
+```c
 void duff_memcpy(char *dest, char *src, size_t count) {
     int n = (count + 7) / 8;
     switch (count % 8) {
@@ -31,7 +31,7 @@ In this example, the loop is unrolled by a factor of 8. The switch statement tak
 
 An example of how you might use the `duff_memcpy()` function in a program is shown below.
 
-```
+```c
 #include <stdio.h>
 #include <string.h>
 

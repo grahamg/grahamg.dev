@@ -2,7 +2,7 @@
 layout: post
 title:  "Leverage Large Language Models for Better NLP Projects"
 date:   2023-04-21
-categories: ai nlp
+categories: ai python programming
 ---
 In the landscape of Natural Language Processing (NLP), large language models (LLMs) have emerged as powerful tools capable of performing a myriad of tasks, prompting a shift in the strategies used in many NLP projects. One approach to incorporating LLMs into your NLP pipelines, termed "LLM maximalist", involves delegating all language understanding and generation tasks to a single LLM.
 
@@ -12,28 +12,33 @@ Instead of the LLM maximalist approach, I propose an alternative: LLM pragmatism
 
 To illustrate this concept, let's walk through a Python-coded example. Suppose you are building a social media reputation management tool that summarizes mentions of your company on platforms like Twitter or Reddit.
 
-```# Step 1: Extract mentions
+```python
+# Step 1: Extract mentions
 def extract_mentions(posts, company):
     mentions = [post for post in posts if company in post]
     return mentions
 
-company_mentions = extract_mentions(posts, 'your_company_name')```
+company_mentions = extract_mentions(posts, 'your_company_name')
+```
 
 The above function represents the first step in our pipeline: extracting relevant mentions of your company from a list of posts. It's a simple, deterministic function that doesn't require an LLM.
 
 However, for the next step, determining sentiment of each mention, we might initially want to use an LLM.
 
-```# Step 2: Determine sentiment using an LLM
+```python
+# Step 2: Determine sentiment using an LLM
 def get_sentiment(texts, model):
     sentiments = [model.predict(text) for text in texts]
     return sentiments
 
 model = SomeSentimentModel()  # this should be a pre-trained LLM, fine-tuned for sentiment analysis
-sentiments = get_sentiment(company_mentions, model)```
+sentiments = get_sentiment(company_mentions, model)
+```
 
 The third step is summarizing. This is also something that could be done deterministically.
 
-```# Step 3: Summarize
+```python
+# Step 3: Summarize
 def summarize_mentions(mentions, sentiments):
     pos = [mention for mention, sentiment in zip(mentions, sentiments) if sentiment == 'positive']
     neg = [mention for mention, sentiment in zip(mentions, sentiments) if sentiment == 'negative']
@@ -42,11 +47,13 @@ def summarize_mentions(mentions, sentiments):
     return summary
 
 summary = summarize_mentions(company_mentions, sentiments)
-print(summary)```
+print(summary)
+```
 
 To further optimize this pipeline, we could train a custom model for sentiment analysis. This requires generating training data, which can be assisted by the LLM.
 
-```# Generate training data
+```python
+# Generate training data
 def generate_training_data(mentions, model):
     training_data = [(mention, model.predict(mention)) for mention in mentions]
     return training_data
@@ -57,8 +64,8 @@ training_data = generate_training_data(company_mentions, model)
 for i in range(len(training_data)):
     print(f"Mention: {training_data[i][0]}, Sentiment: {training_data[i][1]}")
     correct_sentiment = input("Enter the correct sentiment: ")
-    training_data[i] = (training_data[i][0], correct_sentiment)```
-
+    training_data[i] = (training_data[i][0], correct_sentiment)
+```
 
 Now, you can use this training data to train a more focused sentiment analysis model.
 
